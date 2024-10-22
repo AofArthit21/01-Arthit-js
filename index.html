@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div>
+      <!-- Nav Section -->
+      <nav
+        class="flex flex-col sm:flex-row items-center justify-between py-4 px-4 bg-red-100 rounded mb-8"
+      >
+        <div class="px-4 font-bold">AofSHOP</div>
+        <div class="hidden sm:flex sm:flex-row px-4 gap-2 w-full sm:w-auto">
+          <div class="w-full sm:w-auto">
+            <input
+              type="text"
+              placeholder="Search"
+              class="w-full sm:w-auto rounded-md"
+            />
+          </div>
+          <a href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819"
+              />
+            </svg>
+          </a>
+          <a href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+              />
+            </svg>
+          </a>
+          <a href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Dashboard Section -->
+      <div class="">
+        <h1 class="font-bold text-3xl mb-6 text-center">Dashboard</h1>
+        <div class="flex flex-col sm:flex-row justify-center m-4 p-4 gap-2">
+          <div class="flex flex-col w-full sm:w-auto">
+            <label for="name" class="mb-2">Name</label>
+            <input
+              type="text"
+              id="input-name"
+              placeholder="Enter Name"
+              class="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div class="flex flex-col w-full sm:w-auto">
+            <label for="price" class="mb-2">Price</label>
+            <input
+              type="number"
+              id="input-price"
+              placeholder="Enter Price"
+              class="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div class="flex flex-col w-full sm:w-auto">
+            <label for="image-url" class="mb-2">Image URL</label>
+            <input
+              type="url"
+              id="input-url"
+              placeholder="Enter Image URL"
+              class="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button
+            id="add-btn"
+            class="mt-5 p-2 bg-blue-500 text-white rounded w-full sm:w-auto"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Cart Section -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="font-bold text-3xl mb-4 text-center">Cart</h2>
+        <div class="flex flex-col sm:flex-row gap-4 mb-6 justify-center">
+          <button
+            id="select-all-btn"
+            class="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded-lg w-full sm:w-auto"
+          >
+            All
+          </button>
+          <button
+            id="clear-btn"
+            class="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded-lg w-full sm:w-auto"
+          >
+            Clear
+          </button>
+        </div>
+        <ul id="cart-list" class="space-y-4"></ul>
+      </div>
+
+      <!-- Total Section -->
+      <div>
+        <h1
+          id="total-price"
+          class="text-3xl sm:text-5xl text-center m-8 sm:m-16"
+        >
+          Total Price: $0.00
+        </h1>
+      </div>
+      <div class="flex justify-center">
+        <button
+          id="checkout-btn"
+          class="mt-5 p-2 bg-green-500 text-white rounded w-full sm:w-auto"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const NameInput = document.getElementById("input-name");
+      const PriceInput = document.getElementById("input-price");
+      const ImageUrlInput = document.getElementById("input-url");
+      const AddBtn = document.getElementById("add-btn");
+      const CartList = document.getElementById("cart-list");
+      const SelectAllBtn = document.getElementById("select-all-btn");
+      const ClearBtn = document.getElementById("clear-btn");
+      const TotalPrice = document.getElementById("total-price");
+      const CheckoutBtn = document.getElementById("checkout-btn");
+
+      let Carts = [];
+
+      AddBtn.addEventListener("click", () => {
+        if (!NameInput.value.trim()) {
+          alert("Please enter a product name.");
+          return;
+        }
+
+        const priceValue = parseFloat(PriceInput.value.trim());
+        if (isNaN(priceValue) || priceValue <= 0) {
+          alert("Please enter a valid price greater than 0.");
+          return;
+        }
+
+        const imageUrlValue = ImageUrlInput.value.trim();
+        try {
+          new URL(imageUrlValue);
+        } catch (error) {
+          alert("Please enter a valid image URL.");
+          return;
+        }
+
+        const CartItem = {
+          name: NameInput.value.trim(),
+          price: priceValue,
+          imageUrl: imageUrlValue,
+          quantity: 1,
+          isChecked: false,
+        };
+
+        Carts.push(CartItem);
+        renderCarts();
+
+        NameInput.value = "";
+        PriceInput.value = "";
+        ImageUrlInput.value = "";
+        updateTotalPrice();
+      });
+
+      const renderCarts = () => {
+        CartList.innerHTML = "";
+        Carts.forEach((cartItem, index) => {
+          const cartElement = document.createElement("li");
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = cartItem.isChecked;
+          checkbox.addEventListener("change", () => {
+            cartItem.isChecked = checkbox.checked;
+            updateTotalPrice();
+          });
+          cartElement.appendChild(checkbox);
+
+          const img = document.createElement("img");
+          img.src = cartItem.imageUrl;
+          img.alt = cartItem.name;
+          img.style.width = "100px";
+          img.style.height = "100px";
+          cartElement.appendChild(img);
+
+          const nameAndPrice = document.createElement("span");
+          nameAndPrice.textContent = `Name: ${
+            cartItem.name
+          }, Price: $${cartItem.price.toFixed(2)}`;
+          cartElement.appendChild(nameAndPrice);
+
+          const quantityInput = document.createElement("input");
+          quantityInput.type = "number";
+          quantityInput.value = cartItem.quantity;
+          quantityInput.style.width = "50px";
+          quantityInput.addEventListener("change", (element) => {
+            const newQuantity = parseInt(element.target.value);
+            cartItem.quantity = newQuantity;
+            updateTotalPrice();
+          });
+          cartElement.appendChild(quantityInput);
+
+          const buttonContainer = document.createElement("div");
+          buttonContainer.className = "flex space-x-2";
+
+          const removeBtn = document.createElement("button");
+          removeBtn.textContent = "Remove";
+          removeBtn.addEventListener("click", () => {
+            Carts.splice(index, 1);
+            renderCarts();
+            updateTotalPrice();
+          });
+          cartElement.className = "flex justify-between items-center mb-3 mx-4";
+          buttonContainer.appendChild(removeBtn);
+          cartElement.appendChild(buttonContainer);
+          CartList.appendChild(cartElement);
+        });
+        updateTotalPrice();
+      };
+
+      const updateTotalPrice = () => {
+        const total = Carts.reduce((accumulator, currentValue) => {
+          return (
+            accumulator +
+            (currentValue.isChecked
+              ? currentValue.price * currentValue.quantity
+              : 0)
+          );
+        }, 0);
+        TotalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
+      };
+
+      SelectAllBtn.addEventListener("click", () => {
+        Carts.forEach((cartItem) => {
+          cartItem.isChecked = true;
+        });
+        renderCarts();
+      });
+
+      ClearBtn.addEventListener("click", () => {
+        Carts.forEach((cartItem) => {
+          cartItem.isChecked = false;
+        });
+        renderCarts();
+      });
+
+      CheckoutBtn.addEventListener("click", () => {
+        alert("thx bro!!!");
+        window.location.reload();
+      });
+    </script>
+  </body>
+</html>
